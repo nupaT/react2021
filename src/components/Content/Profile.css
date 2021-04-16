@@ -1,9 +1,10 @@
-.content{
+.profile{
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
 }
 
-.content__image {
+.profile__image {
   height: 250px;
+  width: 100%;
 }

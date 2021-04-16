@@ -10,3 +10,15 @@
 .user__foto{
   width: 100px;
 }
+
+.content__user_desc {
+  margin: 0 0 0 25px;
+}
+
+.user__name{
+  margin: 0 0 20px 0;
+}
+
+.user__desc_list{
+  list-style: none;
+}

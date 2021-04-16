@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Profile from './components/Content/Profile';
 import Header from './components/Header';
-import MainBlock from './components/MainBlock';
+import NavMenu from './components/NavMenu';
 
 
 const App = () => {
@@ -9,7 +10,10 @@ const App = () => {
 
     <div className="bodyBlock">
       <Header />
-      <MainBlock />
+      <div className="mainBlock">
+        <NavMenu />
+        <Profile />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.headerBlock{
+  display: flex;
+  height: 70px;
+  align-items: center;
+  border-bottom: 1px solid white;
+  font-size: 40px;
+}
+
+.header__logo {
+  height: 100%;
+}
+
+.header__title{
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+}
