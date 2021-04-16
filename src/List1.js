@@ -1,6 +1,6 @@
 import React from 'react';
 
-const List = () => {
+const List1 = () => {
   return (
     <ul>
       <li className="list">One</li>
@@ -14,4 +14,4 @@ const List = () => {
   );
 }
 
-export default List;
+export default List1;
