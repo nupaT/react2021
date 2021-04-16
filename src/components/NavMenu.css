@@ -18,3 +18,7 @@
   text-decoration: none;
   color: #444455;
 }
+
+.nav__menu_item a:visited{
+  color: #7575c3;
+}
