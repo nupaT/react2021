@@ -8,10 +8,16 @@
 }
 
 .headerBlock{
+  display: flex;
   height: 70px;
   text-align: center;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid white;
-  
+}
+
+.header__logo {
+  height: 100%;
 }
 
 .mainBlock {
@@ -21,8 +27,29 @@
 .nav__menu {
   flex:0 1 15%;
   background-color: #bbbbcc;
+  border-right: 2px solid black;
 }
 
 .content {
-flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
+
+.content__image {
+  height: 250px;
+}
+
+.content__info_user {
+  display: flex;
+  margin: 20px 40px;
+}
+
+.content__user_foto {
+  margin: 0 20px 0 0;
+}
+
+.user__foto{
+  width: 100px;
+}
+
