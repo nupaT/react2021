@@ -1,0 +1,6 @@
+.nav__menu {
+  flex:0 1 15%;
+  background-color: #bbbbcc;
+  border-right: 2px solid black;
+  
+}

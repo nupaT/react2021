@@ -1,0 +1,12 @@
+.content__info_user {
+  display: flex;
+  margin: 20px 40px;
+}
+
+.content__user_foto {
+  margin: 0 20px 0 0;
+}
+
+.user__foto{
+  width: 100px;
+}

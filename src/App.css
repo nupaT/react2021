@@ -20,36 +20,6 @@
   height: 100%;
 }
 
-.mainBlock {
-  display: flex;
-}
 
-.nav__menu {
-  flex:0 1 15%;
-  background-color: #bbbbcc;
-  border-right: 2px solid black;
-}
 
-.content {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-}
-
-.content__image {
-  height: 250px;
-}
-
-.content__info_user {
-  display: flex;
-  margin: 20px 40px;
-}
-
-.content__user_foto {
-  margin: 0 20px 0 0;
-}
-
-.user__foto{
-  width: 100px;
-}
 
