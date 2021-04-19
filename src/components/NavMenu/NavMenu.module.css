@@ -10,15 +10,20 @@
 }
 
 .item{
-  margin: 10px 0 0 0;
+  margin: 10px 20px 0 0;
   text-decoration: none;
 }
 
-.item a{
+.link{
   text-decoration: none;
   color: #444455;
 }
 
-.item a:visited{
+.link:visited{
   color: #7575c3;
 }
+
+.link:hover{
+  color: #0909f5;
+}
+
