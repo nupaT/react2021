@@ -4,21 +4,35 @@
   flex-direction: column;
 }
 
+.input__block{
+  display: flex;
+  width: 80%;
+}
+
 .input{
   margin: 20px 0 0 0;
-  width: 60%;
   height: 100px;
   background-color: #cccccc;
   font-size: 20px;
 }
 
+.submit__block{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .submit{
-  margin: inherit;
-  width: 150px;
-  height: 50px;
+  margin: 20px 0 0 20px;
+  width: 100px;
+  height: 35px;
   background: rgb(63, 246, 161);
   border-radius: 20px;
   font-size: 30px;
   font-weight: 700;
+}
+
+.submit:hover{
+  cursor: pointer;
 }
 

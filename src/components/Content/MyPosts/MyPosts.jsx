@@ -1,12 +1,16 @@
 import React from 'react';
+import MyPost from './MyPost/MyPost';
 import classes from './MyPosts.module.css';
 
 const MyPosts = () => {
   return (
     <div className={classes.block}>
       <div className={classes.title}>My Post</div>
-      <textarea className={classes.input} type="text" ></textarea>
-      <input className={classes.submit} type="submit" value="Тык"></input>
+      <div className={classes.input__block}>
+        <textarea className={classes.input} type="text" ></textarea>
+        <div className={classes.submit__block}><input className={classes.submit} type="submit" name="post" value="Тык"></input></div>
+      </div>
+      <MyPost />
     </div>
   );
 }
