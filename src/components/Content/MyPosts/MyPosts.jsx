@@ -7,7 +7,7 @@ const MyPosts = () => {
     <div className={classes.block}>
       <div className={classes.title}>My Post</div>
       <div className={classes.input__block}>
-        <textarea className={classes.input} type="text" ></textarea>
+        <textarea className={classes.input} type="text" placeholder="Введите ваше сообщение"></textarea>
         <div className={classes.submit__block}><input className={classes.submit} type="submit" name="post" value="Тык"></input></div>
       </div>
       <MyPost />
