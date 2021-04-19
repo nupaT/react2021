@@ -1,24 +1,24 @@
-.nav__menu {
+.menu {
   flex:0 1 15%;
   background-color: #bbbbcc;
   border-right: 2px solid black;
 }
 
-.nav__menu_list {
+.list {
   list-style: none;
   margin: 20px 0 0 20px;
 }
 
-.nav__menu_item{
+.item{
   margin: 10px 0 0 0;
   text-decoration: none;
 }
 
-.nav__menu_item a{
+.item a{
   text-decoration: none;
   color: #444455;
 }
 
-.nav__menu_item a:visited{
+.item a:visited{
   color: #7575c3;
 }
