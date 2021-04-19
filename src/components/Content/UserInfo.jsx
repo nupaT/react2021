@@ -16,7 +16,7 @@ const UserInfo = () => {
           <ul className="user__desc_list">
             <li className="user__desc_item">Date of Birth: 8 juine</li>
             <li className="user__desc_item">City: Vitebsk</li>
-            <li className="user__desc_item">Education: Magistr</li>
+            <li className="user__desc_item">Education: Magistr of cat affairs</li>
           </ul>
         </div>
       </div>
