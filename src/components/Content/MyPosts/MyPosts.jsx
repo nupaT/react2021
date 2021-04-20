@@ -10,7 +10,8 @@ const MyPosts = () => {
         <textarea className={classes.input} type="text" placeholder="Введите ваше сообщение"></textarea>
         <div className={classes.submit__block}><input className={classes.submit} type="submit" name="post" value="Тык"></input></div>
       </div>
-      <MyPost />
+      <MyPost message="Hi, how are you?"/>
+      <MyPost message="Hello! I'm fine!"/>
     </div>
   );
 }

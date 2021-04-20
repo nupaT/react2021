@@ -1,4 +1,10 @@
 .block {
-  margin: 20px 40px;
+  margin: 20px 20px;
   color: greenyellow;
+}
+
+.block img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
