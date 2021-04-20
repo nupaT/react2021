@@ -1,4 +1,5 @@
 import React from 'react';
+import Likes from './Likes/Like';
 import classes from './MyPost.module.css';
 
 const MyPost = (props) => {
