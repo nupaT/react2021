@@ -1,5 +1,4 @@
 import React from 'react';
-import Likes from './MyPost/Likes/Like';
 import MyPost from './MyPost/MyPost';
 import classes from './MyPosts.module.css';
 
@@ -11,10 +10,8 @@ const MyPosts = () => {
         <textarea className={classes.input} type="text" placeholder="Введите ваше сообщение"></textarea>
         <div className={classes.submit__block}><input className={classes.submit} type="submit" name="post" value="Тык"></input></div>
       </div>
-      <MyPost message="Hi, how are you?"/>
-      <Likes count="15"/>
-      <MyPost message="Hello! I'm fine!"/>
-      <Likes count="20"/>
+      <MyPost message="Hi, how are you?" likescount="2"/>
+      <MyPost message="Hello! I'm fine!" likescount="10"/>
     </div>
   );
 }
