@@ -1,16 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './NavMenu.module.css';
 
 
 const NavMenu = () => {
   return (
-    <div className={classes.menu}>
+    <div className={classes.block}>
       <ul className={classes.list}>
-        <li className={classes.item}><a className={classes.link} href="#!">Profile</a></li>
-        <li className={classes.item}><a className={classes.link} href="#!">News</a></li>
-        <li className={classes.item}><a className={classes.link} href="#!">Messages</a></li>
-        <li className={classes.item}><a className={classes.link} href="#!">Music</a></li>
-        <li className={classes.item}><a className={classes.link} href="#!">Settings</a></li>
+        <li className={classes.item}><NavLink className={classes.link} to="/Profile" activeClassName={classes.active}>Profile</NavLink></li>
+        <li className={classes.item}><NavLink className={classes.link} to="/Dialogs" activeClassName={classes.active}>Messages</NavLink></li>
+        <li className={classes.item}><NavLink className={classes.link} to="/News" activeClassName={classes.active}>News</NavLink></li>
+        <li className={classes.item}><NavLink className={classes.link} to="/Music" activeClassName={classes.active}>Music</NavLink></li>
+        <li className={classes.item}><NavLink className={classes.link} to="/Settings" activeClassName={classes.active}>Settings</NavLink></li>
       </ul>
     </div>
   )

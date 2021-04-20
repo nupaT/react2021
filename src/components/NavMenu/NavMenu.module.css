@@ -1,4 +1,4 @@
-.menu {
+.block {
   flex:0 1 15%;
   background-color: #bbbbcc;
   border-right: 2px solid black;
@@ -19,8 +19,8 @@
   color: #444455;
 }
 
-.link:visited{
-  color: #7575c3;
+.active{
+  color: #2d9183;
 }
 
 .link:hover{

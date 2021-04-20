@@ -1,0 +1,33 @@
+.block {
+  display: flex;
+  /* width: 400px; */
+  flex: 1 1 100%;
+  flex-direction: column;
+  margin: 20px 20px;
+  color: greenyellow;
+}
+
+/* .title{
+  display: flex;
+  flex:1 1 100%;
+} */
+
+.mainDialogs{
+  display: flex;
+  margin-top: 30px;
+}
+
+.users{
+  flex: 1 1 30%;
+  margin: 0 30px 20px 0;
+  padding: 0 30px 0 0;
+  border-right: 2px solid black;
+}
+
+.mess{
+  flex: 1 1 70%;
+}
+
+.list{
+  margin: 10px 0 10px 0;
+}
