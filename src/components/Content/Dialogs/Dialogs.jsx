@@ -5,7 +5,7 @@ import classes from './Dialogs.module.css';
 const Users = (props) => {
   return (
     <div className={`${classes.list} ${classes.user}`}>
-      <NavLink to={"/Dialogs/" + props.name}>{props.name}</NavLink>
+      <NavLink activeClassName={classes.active} to={"/Dialogs/" + props.name}>{props.name}</NavLink>
     </div>
   );
 }
@@ -35,7 +35,6 @@ const Dialogs = (props) => {
           <Message mess="Mess2" />
           <Message mess="Mess3" />
         </div>
-
       </div>
     </div>
   )
