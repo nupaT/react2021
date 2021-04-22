@@ -13,16 +13,30 @@
 }
 
 .users{
-  flex: 1 1 30%;
+  flex: 1 1 20%;
   margin: 0 30px 20px 0;
   padding: 0 30px 0 0;
   border-right: 2px solid black;
 }
 
-.mess{
-  flex: 1 1 70%;
+.messages{
+  flex: 1 1 80%;
 }
 
 .list{
   margin: 10px 0 10px 0;
+}
+
+.user:hover {
+  background-color: aquamarine;
+}
+
+
+.mess {
+  color: rgb(255, 241, 41);
+}
+
+
+.active {
+  color: #f700ff;
 }
