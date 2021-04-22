@@ -10,6 +10,14 @@ const Users = (props) => {
   );
 }
 
+const Message = (props) => {
+  return (
+    <div className={`${classes.list} ${classes.mess}`}>
+      {props.mess}
+    </div>
+  );
+}
+
 const Dialogs = (props) => {
   return (
     <div className={classes.block}>
@@ -23,15 +31,9 @@ const Dialogs = (props) => {
           <Users name="User3" />
         </div>
         <div className={classes.messages}>
-          <div className={`${classes.list} ${classes.mess}`}>
-            Mess1
-            </div>
-          <div className={`${classes.list} ${classes.mess}`}>
-            Mess2
-            </div>
-          <div className={`${classes.list} ${classes.mess}`}>
-            Mess3
-            </div>
+          <Message mess="Hi" />
+          <Message mess="Mess2" />
+          <Message mess="Mess3" />
         </div>
 
       </div>
