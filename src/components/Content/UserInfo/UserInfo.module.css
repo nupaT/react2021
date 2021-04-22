@@ -1,22 +1,4 @@
-.info {
-  display: flex;
-  margin: 20px 40px;
-}
-
-.user_foto {
-  margin: 0 20px 0 0;
-}
-
-.foto{
-  width: 150px;
-}
-
-.user__info {
-  margin: 0 0 0 25px;
-}
-
-.name{
-  margin: 0 0 20px 0;
-  font-style: italic;
-  font-size: 30px;
+.block {
+    display: flex;
+    margin: 20px 40px;
 }
