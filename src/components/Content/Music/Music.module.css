@@ -1,4 +1,6 @@
 .block {
+  display: flex;
+  float: 1 1 100%;
   margin: 20px 20px;
   color: greenyellow;
 }

@@ -9,18 +9,14 @@ const Dialogs = (props) => {
         </div>
       <div className={classes.mainDialogs}> 
         <div className={classes.users}>
-          <ul>
-            <li className={classes.list}>User1</li>
-            <li className={classes.list}>User2</li>
-            <li className={classes.list}>User3</li>
-          </ul>
+            <div className={classes.list}>User1</div>
+            <div className={classes.list}>User2</div>
+            <div className={classes.list}>User3</div>
         </div>
         <div className={classes.mess}>
-          <ul>
-            <li className={classes.list}>Mess1</li>
-            <li className={classes.list}>Mess2</li>
-            <li className={classes.list}>Mess3</li>
-          </ul>
+            <div className={classes.list}>Mess1</div>
+            <div className={classes.list}>Mess2</div>
+            <div className={classes.list}>Mess3</div>
         </div>
 
       </div>
