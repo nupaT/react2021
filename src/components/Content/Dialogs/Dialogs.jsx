@@ -5,7 +5,7 @@ import classes from './Dialogs.module.css';
 const Users = (props) => {
   return (
     <div className={`${classes.list} ${classes.user}`}>
-      <NavLink activeClassName={classes.active} to="/Dialogs/User1">props.name</NavLink>
+      <NavLink to={"/Dialogs/" + props.name}>{props.name}</NavLink>
     </div>
   );
 }
@@ -18,13 +18,9 @@ const Dialogs = (props) => {
         </div>
       <div className={classes.mainDialogs}>
         <div className={classes.users}>
-          <Users name="user1" />
-          <div className={`${classes.list} ${classes.user}`}>
-            <NavLink activeClassName={classes.active} to="/Dialogs/User2">User2</NavLink>
-          </div>
-          <div className={`${classes.list} ${classes.user}`}>
-            <NavLink activeClassName={classes.active} to="/Dialogs/User3">User3</NavLink>
-          </div>
+          <Users name="User1" />
+          <Users name="User2" />
+          <Users name="User3" />
         </div>
         <div className={classes.messages}>
           <div className={`${classes.list} ${classes.mess}`}>
