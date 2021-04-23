@@ -26,6 +26,8 @@ let usersData = [
   { id: 5, name: 'user5' },
 ];
 
+
+
 let messagesData = [
   { id: 1, message: 'Message 1' },
   { id: 2, message: 'Message 2' },
@@ -42,7 +44,7 @@ const Dialogs = (props) => {
         </div>
       <div className={classes.mainDialogs}>
         <div className={classes.users}>
-          <Users name="User1" id="1" />
+          <Users name={usersData[0].name} id={usersData[0].id} />
           <Users name="User2" id="2" />
           <Users name="User3" id="3" />
           <Users name="User4" id="4" />

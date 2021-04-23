@@ -1,29 +1,28 @@
 .block {
-  flex:0 1 15%;
-  background-color: #bbbbcc;
-  border-right: 2px solid black;
+    flex: 0 0 200px;
+    background-color: #bbbbcc;
+    border-right: 2px solid black;
 }
 
 .list {
-  list-style: none;
-  margin: 20px 0 0 20px;
+    list-style: none;
+    margin: 20px 0 0 20px;
 }
 
-.item{
-  margin: 10px 20px 0 0;
-  text-decoration: none;
+.item {
+    margin: 10px 20px 0 0;
+    text-decoration: none;
 }
 
-.link{
-  text-decoration: none;
-  color: #444455;
+.link {
+    text-decoration: none;
+    color: #444455;
 }
 
-.active{
-  color: #2d9183;
+.active {
+    color: #2d9183;
 }
 
-.link:hover{
-  color: #0909f5;
+.link:hover {
+    color: #0909f5;
 }
-
