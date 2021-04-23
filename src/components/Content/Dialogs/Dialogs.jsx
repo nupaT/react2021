@@ -19,14 +19,12 @@ const Message = (props) => {
 }
 
 let usersData = [
-  { id: 1, name: 'user1' },
-  { id: 2, name: 'user2' },
-  { id: 3, name: 'user3' },
-  { id: 4, name: 'user4' },
-  { id: 5, name: 'user5' },
+  { id: 1, name: 'User1' },
+  { id: 2, name: 'User2' },
+  { id: 3, name: 'User3' },
+  { id: 4, name: 'User4' },
+  { id: 5, name: 'User5' },
 ];
-
-
 
 let messagesData = [
   { id: 1, message: 'Message 1' },
@@ -34,7 +32,15 @@ let messagesData = [
   { id: 3, message: 'Message 3' },
   { id: 4, message: 'Message 4' },
   { id: 5, message: 'Message 5' },
+  { id: 6, message: 'Message 6' },
 ];
+
+let usersElements = usersData
+      .map(user => <Users name={user.name} id={user.id} />)
+
+
+let messagesElements = messagesData
+      .map(mess => <Message message={mess.message}  />)
 
 const Dialogs = (props) => {
   return (
@@ -44,16 +50,10 @@ const Dialogs = (props) => {
         </div>
       <div className={classes.mainDialogs}>
         <div className={classes.users}>
-          <Users name={usersData[0].name} id={usersData[0].id} />
-          <Users name="User2" id="2" />
-          <Users name="User3" id="3" />
-          <Users name="User4" id="4" />
-          <Users name="User5" id="5" />
+        {usersElements}
         </div>
         <div className={classes.messages}>
-          <Message message="Hi" />
-          <Message message="Mess2" />
-          <Message message="Mess3" />
+          {messagesElements}
         </div>
       </div>
     </div>
