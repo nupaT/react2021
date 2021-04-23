@@ -9,7 +9,7 @@ let postsData = [
   { id: 3, message: 'Go!', likesCount: 38 },
 ]
 
-let postsElement = postsData
+let postsElements = postsData
         .map(post => <MyPost message={post.message} likesCount={post.likesCount} />);
 
 const MyPosts = () => {
@@ -20,7 +20,7 @@ const MyPosts = () => {
         <textarea className={classes.input} type="text" placeholder="Введите ваше сообщение"></textarea>
         <div className={classes.submit__block}><input className={classes.submit} type="submit" name="post" value="Тык"></input></div>
       </div>
-      {postsElement}
+      {postsElements}
     </div>
   );
 }
