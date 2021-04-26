@@ -21,11 +21,11 @@ let messagesData = [
 ];
 
 let usersElements = usersData
-      .map(user => <Users name={user.name} id={user.id} />)
+  .map(user => <Users name={user.name} id={user.id} />)
 
 
 let messagesElements = messagesData
-      .map(mess => <Message message={mess.message}/>)
+  .map(mess => <Message message={mess.message} />)
 
 const Dialogs = (props) => {
   return (
@@ -35,7 +35,7 @@ const Dialogs = (props) => {
         </div>
       <div className={classes.mainDialogs}>
         <div className={classes.users}>
-        {usersElements}
+          {usersElements}
         </div>
         <div className={classes.messages}>
           {messagesElements}

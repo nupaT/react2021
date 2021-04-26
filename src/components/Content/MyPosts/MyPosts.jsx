@@ -6,7 +6,7 @@ let postsData = [
   { id: 1, message: 'Hi, howe are you?', likesCount: 2 },
   { id: 2, message: "Hello! I'm fine!", likesCount: 12 },
   { id: 3, message: 'Me too!', likesCount: 18 },
-  { id: 3, message: 'Go!', likesCount: 38 },
+  { id: 4, message: 'Go!', likesCount: 38 },
 ]
 
 let postsElements = postsData
