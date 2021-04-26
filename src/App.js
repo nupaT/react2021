@@ -12,15 +12,26 @@ import News from "./components/Content/News/News";
 import Music from "./components/Content/Music/Music";
 import Settings from "./components/Content/Settings/Settings";
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="bodyBlock">
         <Header />
         <div className="mainBlock">
           <NavMenu />
-          <Route path="/Profile" render={() => <Profile />} />
-          <Route path="/Dialogs" render={() => <Dialogs />} />
+          <Route
+            path="/Profile"
+            render={() => <Profile postsData={props.postsData} />}
+          />
+          <Route
+            path="/Dialogs"
+            render={() => (
+              <Dialogs
+                usersData={props.usersData}
+                messagesData={props.messagesData}
+              />
+            )}
+          />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />
