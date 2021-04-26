@@ -21,14 +21,16 @@ const App = (props) => {
           <NavMenu />
           <Route
             path="/Profile"
-            render={() => <Profile postsData={props.State.postsData} />}
+            render={() => (
+              <Profile postsData={props.State.profilePage.postsData} />
+            )}
           />
           <Route
             path="/Dialogs"
             render={() => (
               <Dialogs
-                usersData={props.State.usersData}
-                messagesData={props.State.messagesData}
+                usersData={props.State.messagePage.usersData}
+                messagesData={props.State.messagePage.messagesData}
               />
             )}
           />
