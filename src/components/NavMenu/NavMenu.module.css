@@ -1,28 +1,43 @@
 .block {
-    flex: 0 0 200px;
-    background-color: #bbbbcc;
-    border-right: 2px solid black;
+  flex: 0 0 200px;
+  background-color: #bbbbcc;
+  border-right: 2px solid black;
 }
 
 .list {
-    list-style: none;
-    margin: 20px 0 0 20px;
+  list-style: none;
+  margin: 20px 0 0 20px;
+  color: #444455;
 }
 
 .item {
-    margin: 10px 20px 0 0;
-    text-decoration: none;
+  margin: 10px 20px 0 0;
+  text-decoration: none;
 }
 
 .link {
-    text-decoration: none;
-    color: #444455;
+  text-decoration: none;
 }
 
 .active {
-    color: #2d9183;
+  color: #2d9183;
 }
 
 .link:hover {
-    color: #0909f5;
+  color: #0909f5;
+}
+
+.friends {
+  margin: 50px 0 0 0;
+}
+
+.friends__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friends__ico {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
