@@ -11,7 +11,6 @@ import Dialogs from "./components/Content/Dialogs/Dialogs"
 import News from "./components/Content/News/News"
 import Music from "./components/Content/Music/Music"
 import Settings from "./components/Content/Settings/Settings"
-// import Friends from "./components/NavMenu/Friends/Friends"
 
 const App = (props) => {
   return (
@@ -25,7 +24,6 @@ const App = (props) => {
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />
-          {/* <Route path="/Friends" render={() => <Friends usersData={props.State.messagePage.usersData} />} /> */}
         </div>
       </div>
     </BrowserRouter>

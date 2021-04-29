@@ -1,5 +1,5 @@
 .block {
-  flex: 0 0 200px;
+  flex: 0 0 15%;
   background-color: #bbbbcc;
   border-right: 2px solid black;
 }

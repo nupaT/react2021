@@ -4,7 +4,7 @@ import classes from "./NavMenu.module.css"
 import Friends from "./Friends/Friends"
 
 const NavMenu = (props) => {
-  let FriendsElement = props.usersData.map((userName) => <Friends name={userName.name} />)
+  let FriendsElement = props.usersData.map((userName) => <Friends name={userName.name} id={userName.id} />)
 
   return (
     <div className={classes.block}>
