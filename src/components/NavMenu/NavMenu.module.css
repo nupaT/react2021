@@ -41,3 +41,16 @@
   height: 50px;
   border-radius: 50%;
 }
+
+.block__friends {
+  margin: 40px 0 0 0;
+}
+
+.friends__title {
+  text-align: center;
+}
+
+.friends__element {
+  display: flex;
+  flex-wrap: wrap;
+}

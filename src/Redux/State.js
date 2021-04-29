@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 let State = {
   profilePage: {
@@ -17,6 +17,7 @@ let State = {
       { id: 3, name: "User3" },
       { id: 4, name: "User4" },
       { id: 5, name: "User5" },
+      { id: 6, name: "User6" },
     ],
 
     messagesData: [
@@ -28,6 +29,6 @@ let State = {
       { id: 6, message: "Message 6" },
     ],
   },
-};
+}
 
-export default State;
+export default State

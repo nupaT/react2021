@@ -11,6 +11,7 @@ import Dialogs from "./components/Content/Dialogs/Dialogs"
 import News from "./components/Content/News/News"
 import Music from "./components/Content/Music/Music"
 import Settings from "./components/Content/Settings/Settings"
+// import Friends from "./components/NavMenu/Friends/Friends"
 
 const App = (props) => {
   return (
@@ -18,20 +19,13 @@ const App = (props) => {
       <div className="bodyBlock">
         <Header />
         <div className="mainBlock">
-          <NavMenu />
+          <NavMenu usersData={props.State.messagePage.usersData} />
           <Route path="/Profile" render={() => <Profile postsData={props.State.profilePage.postsData} />} />
-          <Route
-            path="/Dialogs"
-            render={() => (
-              <Dialogs
-                usersData={props.State.messagePage.usersData}
-                messagesData={props.State.messagePage.messagesData}
-              />
-            )}
-          />
+          <Route path="/Dialogs" render={() => <Dialogs usersData={props.State.messagePage.usersData} messagesData={props.State.messagePage.messagesData} />} />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />
+          {/* <Route path="/Friends" render={() => <Friends usersData={props.State.messagePage.usersData} />} /> */}
         </div>
       </div>
     </BrowserRouter>
