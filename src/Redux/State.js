@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 let State = {
   profilePage: {
@@ -29,6 +29,16 @@ let State = {
       { id: 6, message: "Message 6" },
     ],
   },
-}
+};
 
-export default State
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 5,
+    message: postMessage,
+    likesCount: 0,
+  };
+
+  State.profilePage.postsData.push(newPost);
+};
+
+export default State;
