@@ -42,3 +42,21 @@
 .message:nth-child(even) {
   text-align: right;
 }
+
+.input {
+  margin: 20px 0 0 0;
+  width: 50%;
+  height: 50px;
+  background-color: #cccccc;
+  font-size: 20px;
+}
+
+.submit {
+  margin: 10px 0 0 10px;
+  width: 100px;
+  height: 35px;
+  background: #3ff6a1;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
