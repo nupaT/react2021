@@ -1,4 +1,5 @@
 import React from "react";
+import { rerenderMainPage } from "../render";
 
 let State = {
   profilePage: {
@@ -37,8 +38,8 @@ export let addPost = (postMessage) => {
     message: postMessage,
     likesCount: 0,
   };
-
   State.profilePage.postsData.push(newPost);
+  rerenderMainPage(State);
 };
 
 export default State;

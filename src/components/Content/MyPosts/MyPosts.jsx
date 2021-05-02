@@ -9,7 +9,7 @@ const MyPosts = (props) => {
 
   let addPost = () => {
     let text = postElement.current.value;
-    alert(text);
+    props.addPost(text);
   };
 
   return (
@@ -18,7 +18,7 @@ const MyPosts = (props) => {
       <div className={classes.input__block}>
         <textarea className={classes.input} ref={postElement} type="text" placeholder="Введите ваше сообщение"></textarea>
         <div className={classes.submit__block}>
-          <input className={classes.submit} type="submit" name="post" value="Тык" onClick={addPost}></input>
+          <input className={classes.submit} onClick={addPost} type="submit" name="post" value="Тык"></input>
         </div>
       </div>
       {postsElements}
