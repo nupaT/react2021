@@ -19,8 +19,27 @@ const App = (props) => {
         <Header />
         <div className="mainBlock">
           <NavMenu usersData={props.State.messagePage.usersData} />
-          <Route path="/Profile" render={() => <Profile postsData={props.State.profilePage.postsData} addPost={props.addPost} />} />
-          <Route path="/Dialogs" render={() => <Dialogs usersData={props.State.messagePage.usersData} messagesData={props.State.messagePage.messagesData} addMessage={props.addMessage} />} />
+          <Route
+            path="/Profile"
+            render={() => (
+              <Profile
+                postsData={props.State.profilePage.postsData}
+                addPost={props.addPost}
+                textPost={props.State.profilePage.textPost}
+                changePostText={props.changePostText}
+              />
+            )}
+          />
+          <Route
+            path="/Dialogs"
+            render={() => (
+              <Dialogs
+                usersData={props.State.messagePage.usersData}
+                messagesData={props.State.messagePage.messagesData}
+                addMessage={props.addMessage}
+              />
+            )}
+          />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />

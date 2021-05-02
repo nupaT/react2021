@@ -9,6 +9,8 @@ let State = {
       { id: 3, message: "Me too!", likesCount: 18 },
       { id: 4, message: "Go!", likesCount: 38 },
     ],
+
+    textPost: "",
   },
 
   messagePage: {
@@ -48,6 +50,11 @@ export let addMessage = (message) => {
     message: message,
   };
   State.messagePage.messagesData.push(newMess);
+  rerenderMainPage(State);
+};
+
+export let changePostText = (postText) => {
+  State.profilePage.textPost = postText;
   rerenderMainPage(State);
 };
 
