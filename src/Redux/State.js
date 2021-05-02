@@ -34,13 +34,14 @@ let State = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: State.profilePage.postsData.length + 1,
-    message: postMessage,
+    message: State.profilePage.textPost,
     likesCount: 0,
   };
   State.profilePage.postsData.push(newPost);
+  State.profilePage.textPost = "";
   rerenderMainPage(State);
 };
 

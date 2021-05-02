@@ -10,14 +10,12 @@ const MyPosts = (props) => {
   let postElement = React.createRef();
 
   let addPost = () => {
-    let text = postElement.current.value;
-    props.addPost(text);
-    props.changePostText("");
+    props.addPost();
   };
 
   let newEnterText = () => {
     let text = postElement.current.value;
-    postElement.current.value = props.changePostText(text);
+    props.changePostText(text);
   };
 
   return (

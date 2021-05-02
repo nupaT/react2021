@@ -25,9 +25,20 @@ const Dialogs = (props) => {
           <div>{messagesElements}</div>
           <div className={classes.message__add}>
             <div className={classes.message__textarea}>
-              <textarea className={classes.input} ref={messageText} type="text" placeholder="Ваше сообщение..."></textarea>
+              <textarea
+                className={classes.input}
+                ref={messageText}
+                type="text"
+                placeholder="Ваше сообщение..."
+              ></textarea>
             </div>
-            <input className={classes.submit} onClick={addMessage} type="submit" name="dialogPost" value="Отправить"></input>
+            <input
+              className={classes.submit}
+              onClick={addMessage}
+              type="submit"
+              name="dialogPost"
+              value="Отправить"
+            ></input>
           </div>
         </div>
       </div>
