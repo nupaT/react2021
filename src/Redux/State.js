@@ -34,11 +34,20 @@ let State = {
 
 export let addPost = (postMessage) => {
   let newPost = {
-    id: 5,
+    id: State.profilePage.postsData.length + 1,
     message: postMessage,
     likesCount: 0,
   };
   State.profilePage.postsData.push(newPost);
+  rerenderMainPage(State);
+};
+
+export let addMessage = (message) => {
+  let newMess = {
+    id: State.messagePage.messagesData.length,
+    message: message,
+  };
+  State.messagePage.messagesData.push(newMess);
   rerenderMainPage(State);
 };
 
