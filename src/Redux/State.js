@@ -1,5 +1,4 @@
-import React from "react";
-import { rerenderMainPage } from "../render";
+let rerenderMainPage = () => {};
 
 let State = {
   profilePage: {
@@ -34,6 +33,8 @@ let State = {
   },
 };
 
+//добавление поста
+
 export let addPost = () => {
   let newPost = {
     id: State.profilePage.postsData.length + 1,
@@ -41,11 +42,13 @@ export let addPost = () => {
     likesCount: 0,
   };
   State.profilePage.postsData.push(newPost);
-  State.profilePage.textPost = "";
-  rerenderMainPage(State);
+  State.profilePage.textPost = ""; //обнуление поля ввода после отправки
+  rerenderMainPage(State); //отрисовка изменений после вызова
 };
 
-export let addMessage = (message) => {
+//добавление сообщения в диалоги
+
+export const addMessage = (message) => {
   let newMess = {
     id: State.messagePage.messagesData.length,
     message: message,
@@ -54,9 +57,17 @@ export let addMessage = (message) => {
   rerenderMainPage(State);
 };
 
-export let changePostText = (postText) => {
+//отслеживание изменения в поле ввода в посте
+
+export const changePostText = (postText) => {
   State.profilePage.textPost = postText;
   rerenderMainPage(State);
+};
+
+//функция вызывает rerender-функцию из index.js для обновления новых данных
+
+export const updateFunction = (observer) => {
+  rerenderMainPage = observer;
 };
 
 export default State;
