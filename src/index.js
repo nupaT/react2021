@@ -9,12 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 let rerenderMainPage = (State) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App
-        State={State}
-        addPost={Store.addPost.bind(Store)}
-        addMessage={Store.addMessage.bind(Store)}
-        changePostText={Store.changePostText.bind(Store)}
-      />
+      <App State={State} dispatch={Store.dispatch.bind(Store)} />
     </React.StrictMode>,
     document.getElementById("root")
   );

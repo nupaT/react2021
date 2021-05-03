@@ -10,12 +10,12 @@ const MyPosts = (props) => {
   let postElement = React.createRef();
 
   let addPost = () => {
-    props.addPost();
+    props.dispatch({ type: "ADD-POST" });
   };
 
   let newEnterText = () => {
     let text = postElement.current.value;
-    props.changePostText(text);
+    props.dispatch({ type: "CHANGE-POST-TEXT", postText: text });
   };
 
   return (

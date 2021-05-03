@@ -31,14 +31,19 @@ let Store = {
       ],
     },
   },
+  _rerenderMainPage() {},
+
   getState() {
     return this._State;
   },
 
-  _rerenderMainPage() {},
+  //функция вызывает rerender-функцию из index.js для обновления новых данных
+  subscribe(observer) {
+    this._rerenderMainPage = observer;
+  },
 
   //добавление поста
-  addPost() {
+  /*addPost() {
     let newPost = {
       id: this._State.profilePage.postsData.length + 1,
       message: this._State.profilePage.textPost,
@@ -47,27 +52,48 @@ let Store = {
     this._State.profilePage.postsData.push(newPost);
     this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
     this._rerenderMainPage(this._State); //отрисовка изменений после вызова
-  },
+  },*/
 
   //добавление сообщения в диалоги
-  addMessage(message) {
+  /*addMessage(message) {
     let newMess = {
       id: this._State.messagePage.messagesData.length,
       message: message,
     };
     this._State.messagePage.messagesData.push(newMess);
     this._rerenderMainPage(this._State);
-  },
+  },*/
 
   //отслеживание изменения в поле ввода в посте
-  changePostText(postText) {
+  /*changePostText(postText) {
     this._State.profilePage.textPost = postText;
     this._rerenderMainPage(this._State);
-  },
+  },*/
 
-  //функция вызывает rerender-функцию из index.js для обновления новых данных
-  subscribe(observer) {
-    this._rerenderMainPage = observer;
+  dispatch(action) {
+    //добавление поста
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: this._State.profilePage.postsData.length + 1,
+        message: this._State.profilePage.textPost,
+        likesCount: 0,
+      };
+      this._State.profilePage.postsData.push(newPost);
+      this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
+      this._rerenderMainPage(this._State); //отрисовка изменений после вызова
+      //отслеживание изменения в поле ввода в посте
+    } else if (action.type === "CHANGE-POST-TEXT") {
+      this._State.profilePage.textPost = action.postText;
+      this._rerenderMainPage(this._State);
+      //добавление сообщения в диалоги
+    } else if ((action.type = "ADD-MESSAGE")) {
+      let newMess = {
+        id: this._State.messagePage.messagesData.length,
+        message: action.message,
+      };
+      this._State.messagePage.messagesData.push(newMess);
+      this._rerenderMainPage(this._State);
+    }
   },
 };
 

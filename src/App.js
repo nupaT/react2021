@@ -24,9 +24,9 @@ const App = (props) => {
             render={() => (
               <Profile
                 postsData={props.State.profilePage.postsData}
-                addPost={props.addPost}
+                dispatch={props.dispatch}
                 textPost={props.State.profilePage.textPost}
-                changePostText={props.changePostText}
+                // changePostText={props.changePostText}
               />
             )}
           />
@@ -36,7 +36,7 @@ const App = (props) => {
               <Dialogs
                 usersData={props.State.messagePage.usersData}
                 messagesData={props.State.messagePage.messagesData}
-                addMessage={props.addMessage}
+                dispatch={props.dispatch}
               />
             )}
           />
