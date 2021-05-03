@@ -32,7 +32,8 @@ let Store = {
     },
   },
   _rerenderMainPage() {},
-
+  //забирает значение State для внешнего использования (правильное использование данных
+  // обращаемся из самого объекта к данным а не из вне)
   getState() {
     return this._State;
   },
@@ -41,34 +42,6 @@ let Store = {
   subscribe(observer) {
     this._rerenderMainPage = observer;
   },
-
-  //добавление поста
-  /*addPost() {
-    let newPost = {
-      id: this._State.profilePage.postsData.length + 1,
-      message: this._State.profilePage.textPost,
-      likesCount: 0,
-    };
-    this._State.profilePage.postsData.push(newPost);
-    this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
-    this._rerenderMainPage(this._State); //отрисовка изменений после вызова
-  },*/
-
-  //добавление сообщения в диалоги
-  /*addMessage(message) {
-    let newMess = {
-      id: this._State.messagePage.messagesData.length,
-      message: message,
-    };
-    this._State.messagePage.messagesData.push(newMess);
-    this._rerenderMainPage(this._State);
-  },*/
-
-  //отслеживание изменения в поле ввода в посте
-  /*changePostText(postText) {
-    this._State.profilePage.textPost = postText;
-    this._rerenderMainPage(this._State);
-  },*/
 
   dispatch(action) {
     //добавление поста

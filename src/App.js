@@ -26,7 +26,6 @@ const App = (props) => {
                 postsData={props.State.profilePage.postsData}
                 dispatch={props.dispatch}
                 textPost={props.State.profilePage.textPost}
-                // changePostText={props.changePostText}
               />
             )}
           />
