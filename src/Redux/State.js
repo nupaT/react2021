@@ -70,4 +70,24 @@ let Store = {
   },
 };
 
+export const addPostActionCreator = () => {
+  return {
+    type: "ADD-POST",
+  };
+};
+
+export const changePostTextActionCreator = (text) => {
+  return {
+    type: "CHANGE-POST-TEXT",
+    postText: text,
+  };
+};
+
+export const addMessageActionCreator = (text) => {
+  return {
+    type: "ADD-MESSAGE",
+    message: text,
+  };
+};
+
 export default Store;
