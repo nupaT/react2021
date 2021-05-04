@@ -1,3 +1,7 @@
+const ADD_POST = "ADD-POST";
+const CHANGE_POST_TEXT = "CHANGE-POST-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
+
 let Store = {
   _State: {
     profilePage: {
@@ -45,7 +49,7 @@ let Store = {
 
   dispatch(action) {
     //добавление поста
-    if (action.type === "ADD-POST") {
+    if (action.type === ADD_POST) {
       let newPost = {
         id: this._State.profilePage.postsData.length + 1,
         message: this._State.profilePage.textPost,
@@ -55,11 +59,11 @@ let Store = {
       this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
       this._rerenderMainPage(this._State); //отрисовка изменений после вызова
       //отслеживание изменения в поле ввода в посте
-    } else if (action.type === "CHANGE-POST-TEXT") {
+    } else if (action.type === CHANGE_POST_TEXT) {
       this._State.profilePage.textPost = action.postText;
       this._rerenderMainPage(this._State);
       //добавление сообщения в диалоги
-    } else if ((action.type = "ADD-MESSAGE")) {
+    } else if ((action.type = ADD_MESSAGE)) {
       let newMess = {
         id: this._State.messagePage.messagesData.length,
         message: action.message,
@@ -72,20 +76,20 @@ let Store = {
 
 export const addPostActionCreator = () => {
   return {
-    type: "ADD-POST",
+    type: ADD_POST,
   };
 };
 
 export const changePostTextActionCreator = (text) => {
   return {
-    type: "CHANGE-POST-TEXT",
+    type: CHANGE_POST_TEXT,
     postText: text,
   };
 };
 
 export const addMessageActionCreator = (text) => {
   return {
-    type: "ADD-MESSAGE",
+    type: ADD_MESSAGE,
     message: text,
   };
 };
