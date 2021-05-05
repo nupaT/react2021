@@ -1,5 +1,5 @@
 import React from "react";
-import { addMessageActionCreator } from "../../../Redux/State";
+import { addMessageActionCreator, changeMessageTextActionCreator } from "../../../Redux/State";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import Users from "./Users/Users";
@@ -11,10 +11,13 @@ const Dialogs = (props) => {
 
   let messageText = React.createRef();
 
-  let addMessage = () => {
+  let newEnterTextMessage = () => {
     let text = messageText.current.value;
-    props.dispatch(addMessageActionCreator(text));
-    messageText.current.value = "";
+    props.dispatch(changeMessageTextActionCreator(text));
+  };
+
+  let addMessage = () => {
+    props.dispatch(addMessageActionCreator());
   };
 
   return (
@@ -29,6 +32,7 @@ const Dialogs = (props) => {
               <textarea
                 className={classes.input}
                 ref={messageText}
+                onChange={newEnterTextMessage}
                 type="text"
                 placeholder="Ваше сообщение..."
               ></textarea>

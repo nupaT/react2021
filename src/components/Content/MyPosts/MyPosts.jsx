@@ -14,7 +14,7 @@ const MyPosts = (props) => {
     props.dispatch(addPostActionCreator());
   };
 
-  let newEnterText = () => {
+  let newEnterTextPost = () => {
     let text = postElement.current.value;
     props.dispatch(changePostTextActionCreator(text));
   };
@@ -25,7 +25,7 @@ const MyPosts = (props) => {
       <div className={classes.input__block}>
         <textarea
           className={classes.input}
-          onChange={newEnterText}
+          onChange={newEnterTextPost}
           ref={postElement}
           value={props.textPost}
         />
