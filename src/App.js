@@ -36,6 +36,7 @@ const App = (props) => {
                 usersData={props.State.messagePage.usersData}
                 messagesData={props.State.messagePage.messagesData}
                 dispatch={props.dispatch}
+                textMessage={props.State.messagePage.textMessage}
               />
             )}
           />
