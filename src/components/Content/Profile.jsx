@@ -11,7 +11,12 @@ const Profile = (props) => {
         src="https://static8.depositphotos.com/1370441/848/i/600/depositphotos_8486144-stock-photo-beach-and-tropical-sea.jpg"
       />
       <UserInfo />
-      <MyPosts postsData={props.postsData} dispatch={props.dispatch} textPost={props.textPost} />
+      <MyPosts
+        postsData={props.profilePage.postsData}
+        dispatch={props.dispatch}
+        textPost={props.profilePage.textPost}
+        /*textPost={props.textPost}*/
+      />
     </div>
   );
 };

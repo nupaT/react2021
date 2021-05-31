@@ -27,7 +27,7 @@ const MyPosts = (props) => {
           className={classes.input}
           onChange={newEnterTextPost}
           ref={postElement}
-          value={props.textPost}
+          value={props.postsData.textPost}
         />
         <div className={classes.submit__block}>
           <input
