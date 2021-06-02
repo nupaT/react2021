@@ -22,12 +22,7 @@ const App = (props) => {
           <Route
             path="/Profile"
             render={() => (
-              <Profile
-                //postsData={props.State.profilePage.postsData}
-                profilePage={props.State.profilePage}
-                dispatch={props.dispatch}
-                // textPost={props.State.profilePage.textPost}
-              />
+              <Profile profilePage={props.State.profilePage} dispatch={props.dispatch} />
             )}
           />
           <Route
