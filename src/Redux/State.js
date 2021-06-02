@@ -51,33 +51,41 @@ let Store = {
   },
 
   dispatch(action) {
-    //добавление поста
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: this._State.profilePage.postsData.length + 1,
-        message: this._State.profilePage.textPost,
-        likesCount: 0,
-      };
-      this._State.profilePage.postsData.push(newPost);
-      this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
-      this._rerenderMainPage(this._State); //отрисовка изменений после вызова
-      //отслеживание изменения в поле ввода в посте
-    } else if (action.type === CHANGE_POST_TEXT) {
-      this._State.profilePage.textPost = action.postText;
-      this._rerenderMainPage(this._State);
-      //добавление сообщения в диалоги
-    } else if (action.type === ADD_MESSAGE) {
-      let newMess = {
-        id: this._State.messagePage.messagesData.length + 1,
-        message: this._State.messagePage.textMessage,
-      };
-      this._State.messagePage.messagesData.push(newMess);
-      this._State.messagePage.textMessage = "";
-      this._rerenderMainPage(this._State);
-      //отслеживание изменений в поле ввода MESSAGE
-    } else if (action.type === CHANGE_MESSAGE_TEXT) {
-      this._State.messagePage.textMessage = action.messageText;
-      this._rerenderMainPage(this._State);
+    switch (action.type) {
+      //добавление поста
+      case ADD_POST:
+        let newPost = {
+          id: this._State.profilePage.postsData.length + 1,
+          message: this._State.profilePage.textPost,
+          likesCount: 0,
+        };
+        this._State.profilePage.postsData.push(newPost);
+        this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
+        this._rerenderMainPage(this._State); //отрисовка изменений после вызова
+        break;
+      //изменение текста в поле ввода поста
+      case CHANGE_POST_TEXT:
+        this._State.profilePage.textPost = action.postText;
+        this._rerenderMainPage(this._State);
+        break;
+      //добавление сообщения
+      case ADD_MESSAGE:
+        let newMess = {
+          id: this._State.messagePage.messagesData.length + 1,
+          message: this._State.messagePage.textMessage,
+        };
+        this._State.messagePage.messagesData.push(newMess);
+        this._State.messagePage.textMessage = "";
+        this._rerenderMainPage(this._State);
+        break;
+      //изменение текста в поле ввода сообщения
+      case CHANGE_MESSAGE_TEXT:
+        this._State.messagePage.textMessage = action.messageText;
+        this._rerenderMainPage(this._State);
+        break;
+
+      default:
+        break;
     }
   },
 };
