@@ -28,6 +28,7 @@ const MyPosts = (props) => {
           onChange={newEnterTextPost}
           ref={postElement}
           value={props.textPost}
+          placeholder="Ваше сообщение..."
         />
         <div className={classes.submit__block}>
           <input
