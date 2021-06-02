@@ -8,14 +8,12 @@ const MyPosts = (props) => {
     <MyPost message={post.message} likesCount={post.likesCount} />
   ));
 
-  let postElement = React.createRef();
-
   let addPost = () => {
     props.dispatch(addPostActionCreator());
   };
 
-  let newEnterTextPost = () => {
-    let text = postElement.current.value;
+  let newEnterTextPost = (event) => {
+    let text = event.target.value;
     props.dispatch(changePostTextActionCreator(text));
   };
 
@@ -26,7 +24,6 @@ const MyPosts = (props) => {
         <textarea
           className={classes.input}
           onChange={newEnterTextPost}
-          ref={postElement}
           value={props.textPost}
           placeholder="Ваше сообщение..."
         />
