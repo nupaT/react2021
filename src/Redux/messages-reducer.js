@@ -1,6 +1,8 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
 const CHANGE_MESSAGE_TEXT = "CHANGE-MESSAGE-TEXT";
 
+//создаем начальное значение state и применяем его как дефолтное state - initialState
+
 let initialState = {
   usersData: [
     { id: 1, name: "User1" },

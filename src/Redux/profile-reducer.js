@@ -1,6 +1,8 @@
 const ADD_POST = "ADD-POST";
 const CHANGE_POST_TEXT = "CHANGE-POST-TEXT";
 
+//создаем начальное значение state и применяем его как дефолтное state - initialState
+
 let initialState = {
   postsData: [
     { id: 1, message: "Hi, howe are you?", likesCount: 2 },
