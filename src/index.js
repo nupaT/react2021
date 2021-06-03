@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Store from "./Redux/State";
+// import Store from "./Redux/Store";
+import Store from "./Redux/redux-store";
 
 import reportWebVitals from "./reportWebVitals";
 
 let rerenderMainPage = (State) => {
+  // debugger;
   ReactDOM.render(
     <React.StrictMode>
       <App State={State} dispatch={Store.dispatch.bind(Store)} Store={Store} />
@@ -17,6 +19,9 @@ let rerenderMainPage = (State) => {
 
 rerenderMainPage(Store.getState());
 
-Store.subscribe(rerenderMainPage);
+Store.subscribe(() => {
+  let state = Store.getState();
+  rerenderMainPage(state);
+});
 
 reportWebVitals();

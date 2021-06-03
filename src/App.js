@@ -13,6 +13,7 @@ import Music from "./components/Content/Music/Music";
 import Settings from "./components/Content/Settings/Settings";
 
 const App = (props) => {
+  // debugger;
   return (
     <BrowserRouter>
       <div className="bodyBlock">
