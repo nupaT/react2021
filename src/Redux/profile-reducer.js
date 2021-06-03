@@ -24,4 +24,15 @@ const profileReducer = (state, action) => {
   return state;
 };
 
+export const addPostActionCreator = () => {
+  return { type: ADD_POST };
+};
+
+export const changePostTextActionCreator = (text) => {
+  return {
+    type: CHANGE_POST_TEXT,
+    postText: text,
+  };
+};
+
 export default profileReducer;

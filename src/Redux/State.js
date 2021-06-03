@@ -1,12 +1,6 @@
 import messagesReducer from "./messages-reducer";
 import profileReducer from "./profile-reducer";
 
-const ADD_POST = "ADD-POST";
-const CHANGE_POST_TEXT = "CHANGE-POST-TEXT";
-
-const ADD_MESSAGE = "ADD-MESSAGE";
-const CHANGE_MESSAGE_TEXT = "CHANGE-MESSAGE-TEXT";
-
 let Store = {
   _State: {
     profilePage: {
@@ -60,70 +54,7 @@ let Store = {
     this._State.profilePage = profileReducer(this._State.profilePage, action);
     this._State.messagePage = messagesReducer(this._State.messagePage, action);
     this._rerenderMainPage(this._State);
-
-    // switch (action.type) {
-    //   //добавление поста
-    //   case ADD_POST:
-    //     let newPost = {
-    //       id: this._State.profilePage.postsData.length + 1,
-    //       message: this._State.profilePage.textPost,
-    //       likesCount: 0,
-    //     };
-    //     this._State.profilePage.postsData.push(newPost);
-    //     this._State.profilePage.textPost = ""; //обнуление поля ввода после отправки
-    //     this._rerenderMainPage(this._State); //отрисовка изменений после вызова
-    //     break;
-    //   //изменение текста в поле ввода поста
-    //   case CHANGE_POST_TEXT:
-    //     this._State.profilePage.textPost = action.postText;
-    //     this._rerenderMainPage(this._State);
-    //     break;
-    //   //добавление сообщения
-    //   case ADD_MESSAGE:
-    //     let newMess = {
-    //       id: this._State.messagePage.messagesData.length + 1,
-    //       message: this._State.messagePage.textMessage,
-    //     };
-    //     this._State.messagePage.messagesData.push(newMess);
-    //     this._State.messagePage.textMessage = "";
-    //     this._rerenderMainPage(this._State);
-    //     break;
-    //   //изменение текста в поле ввода сообщения
-    //   case CHANGE_MESSAGE_TEXT:
-    //     this._State.messagePage.textMessage = action.messageText;
-    //     this._rerenderMainPage(this._State);
-    //     break;
-
-    //   default:
-    //     break;
-    // }
   },
-};
-
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  };
-};
-
-export const changePostTextActionCreator = (text) => {
-  return {
-    type: CHANGE_POST_TEXT,
-    postText: text,
-  };
-};
-
-export const addMessageActionCreator = () => {
-  return {
-    type: ADD_MESSAGE,
-  };
-};
-
-export const changeMessageTextActionCreator = (text) => {
-  return {
-    type: CHANGE_MESSAGE_TEXT,
-    messageText: text,
-  };
 };
 
 export default Store;
