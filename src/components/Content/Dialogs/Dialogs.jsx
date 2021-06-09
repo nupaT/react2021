@@ -8,6 +8,7 @@ import Message from "./Message/Message";
 import Users from "./Users/Users";
 
 const Dialogs = (props) => {
+  // debugger;
   //создаем переменнуюю state и забираем в нее _State.messagesPage
   let state = props.Store.getState().messagePage;
   //создаем переменную usersElements и пробегаем по объекту usersData

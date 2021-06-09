@@ -1,7 +1,8 @@
 import React from "react";
 import UserInfo from "./UserInfo/UserInfo";
 import classes from "./Profile.module.css";
-import MyPosts from "./MyPosts/MyPosts";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
+// import MyPostsContainer from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
   return (
@@ -11,12 +12,7 @@ const Profile = (props) => {
         src="https://static8.depositphotos.com/1370441/848/i/600/depositphotos_8486144-stock-photo-beach-and-tropical-sea.jpg"
       />
       <UserInfo />
-      <MyPosts
-        postsData={props.profilePage.postsData}
-        dispatch={props.dispatch}
-        textPost={props.profilePage.textPost}
-        /*textPost={props.textPost}*/
-      />
+      <MyPostsContainer Store={props.Store} />
     </div>
   );
 };

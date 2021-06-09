@@ -1,20 +1,21 @@
 import React from "react";
 import MyPost from "./MyPost/MyPost";
 import classes from "./MyPosts.module.css";
-import { addPostActionCreator, changePostTextActionCreator } from "../../../Redux/profile-reducer";
+// import { addPostActionCreator, changePostTextActionCreator } from "../../../Redux/profile-reducer";
+// import MyPostsContainer from "./MyPostsContainer";
 
 const MyPosts = (props) => {
   let postsElements = props.postsData.map((post) => (
     <MyPost message={post.message} likesCount={post.likesCount} />
   ));
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost();
   };
 
   let newEnterTextPost = (event) => {
     let text = event.target.value;
-    props.dispatch(changePostTextActionCreator(text));
+    props.changePostText(text);
   };
 
   return (
@@ -30,7 +31,7 @@ const MyPosts = (props) => {
         <div className={classes.submit__block}>
           <input
             className={classes.submit}
-            onClick={addPost}
+            onClick={onAddPost}
             type="submit"
             name="post"
             value="Тык"

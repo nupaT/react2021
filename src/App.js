@@ -20,12 +20,7 @@ const App = (props) => {
         <Header />
         <div className="mainBlock">
           <NavMenu usersData={props.State.messagePage.usersData} />
-          <Route
-            path="/Profile"
-            render={() => (
-              <Profile profilePage={props.State.profilePage} dispatch={props.dispatch} />
-            )}
-          />
+          <Route path="/Profile" render={() => <Profile Store={props.Store} />} />
           <Route path="/Dialogs" render={() => <Dialogs Store={props.Store} />} />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
