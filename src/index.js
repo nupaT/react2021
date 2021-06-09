@@ -11,7 +11,7 @@ let rerenderMainPage = (State) => {
   // debugger;
   ReactDOM.render(
     <React.StrictMode>
-      <App State={State} dispatch={Store.dispatch.bind(Store)} Store={Store} />
+      <App State={State} Store={Store} />
     </React.StrictMode>,
     document.getElementById("root")
   );
