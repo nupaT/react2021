@@ -8,7 +8,7 @@ import Dialogs from "./Dialogs";
 const DialogsContainer = (props) => {
   // debugger;
   //создаем переменнуюю state и забираем в нее _State.messagesPage
-  let state = props.Store.getState(); //.messagePage;
+  let state = props.Store.getState().messagePage;
 
   //создаем переменную newEnterTextMessage, которая вызывается по методу onChange в textarea
   //с помощью стрелочной функции со параметром event получаем значение из выбранного поля target.value
@@ -25,9 +25,9 @@ const DialogsContainer = (props) => {
     <Dialogs
       changeTextMessage={newEnterTextMessage}
       addMessage={addMessage}
-      textMessage={state.messagePage.textMessage}
-      usersData={state.messagePage.usersData}
-      messagesData={state.messagePage.messagesData}
+      textMessage={state.textMessage}
+      usersData={state.usersData}
+      messagesData={state.messagesData}
     />
   );
 };
