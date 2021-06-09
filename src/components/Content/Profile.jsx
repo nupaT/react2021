@@ -2,7 +2,6 @@ import React from "react";
 import UserInfo from "./UserInfo/UserInfo";
 import classes from "./Profile.module.css";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
-// import MyPostsContainer from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
   return (

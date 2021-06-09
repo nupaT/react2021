@@ -8,25 +8,22 @@ import Message from "./Message/Message";
 import Users from "./Users/Users";
 
 const Dialogs = (props) => {
-  // debugger;
-  //создаем переменнуюю state и забираем в нее _State.messagesPage
-  let state = props.Store.getState().messagePage;
   //создаем переменную usersElements и пробегаем по объекту usersData
   //забирая в нее user.name и user.id с помощью метода map
-  let usersElements = state.usersData.map((user) => <Users name={user.name} id={user.id} />);
+  let usersElements = props.usersData.map((user) => <Users name={user.name} id={user.id} />);
 
-  let messagesElements = state.messagesData.map((mess) => <Message message={mess.message} />);
+  let messagesElements = props.messagesData.map((mess) => <Message message={mess.message} />);
 
   //создаем переменную newEnterTextMessage, которая вызывается по методу onChange в textarea
   //с помощью стрелочной функции со параметром event получаем значение из выбранного поля target.value
   //target - выбранное поле, value - значение
   let newEnterTextMessage = (event) => {
     let text = event.target.value;
-    props.Store.dispatch(changeMessageTextActionCreator(text));
+    props.changeTextMessage(text);
   };
 
-  let addMessage = () => {
-    props.Store.dispatch(addMessageActionCreator());
+  let onAddMessage = () => {
+    props.addMessage();
   };
 
   return (
@@ -42,13 +39,13 @@ const Dialogs = (props) => {
                 className={classes.input}
                 onChange={newEnterTextMessage}
                 type="text"
-                value={state.textMessage}
+                value={props.textMessage}
                 placeholder="Ваше сообщение..."
               ></textarea>
             </div>
             <input
               className={classes.submit}
-              onClick={addMessage}
+              onClick={onAddMessage}
               type="submit"
               name="dialogPost"
               value="Отправить"

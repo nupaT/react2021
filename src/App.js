@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 import NavMenu from "./components/NavMenu/NavMenu";
 
 import Profile from "./components/Content/Profile";
-import Dialogs from "./components/Content/Dialogs/Dialogs";
+import DialogsContainer from "./components/Content/Dialogs/DialogsContainer";
 import News from "./components/Content/News/News";
 import Music from "./components/Content/Music/Music";
 import Settings from "./components/Content/Settings/Settings";
@@ -21,7 +21,7 @@ const App = (props) => {
         <div className="mainBlock">
           <NavMenu usersData={props.State.messagePage.usersData} />
           <Route path="/Profile" render={() => <Profile Store={props.Store} />} />
-          <Route path="/Dialogs" render={() => <Dialogs Store={props.Store} />} />
+          <Route path="/Dialogs" render={() => <DialogsContainer Store={props.Store} />} />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />
