@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import NavMenu from "./components/NavMenu/NavMenu";
+import NavMenuContainer from "./components/NavMenu/NavMenuContainer";
 
 import Profile from "./components/Content/Profile";
 import DialogsContainer from "./components/Content/Dialogs/DialogsContainer";
@@ -12,16 +12,16 @@ import News from "./components/Content/News/News";
 import Music from "./components/Content/Music/Music";
 import Settings from "./components/Content/Settings/Settings";
 
-const App = (props) => {
+const App = () => {
   // debugger;
   return (
     <BrowserRouter>
       <div className="bodyBlock">
         <Header />
         <div className="mainBlock">
-          <NavMenu usersData={props.State.messagePage.usersData} />
-          <Route path="/Profile" render={() => <Profile Store={props.Store} />} />
-          <Route path="/Dialogs" render={() => <DialogsContainer Store={props.Store} />} />
+          <NavMenuContainer />
+          <Route path="/Profile" render={() => <Profile />} />
+          <Route path="/Dialogs" render={() => <DialogsContainer />} />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />

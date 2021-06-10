@@ -1,14 +1,12 @@
-import React from 'react';
-import classes from './Settings.module.css';
+import React from "react";
+import classes from "./Settings.module.css";
 
-const Settings = (props) => {
+const Settings = () => {
   return (
     <div className={classes.block}>
-      <div className={classes.title}>
-      Settings
-      </div>
+      <div className={classes.title}>Settings</div>
     </div>
-  )
-}
+  );
+};
 
 export default Settings;

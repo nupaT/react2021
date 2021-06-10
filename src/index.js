@@ -2,26 +2,34 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import Store from "./Redux/Store";
-import Store from "./Redux/redux-store";
+import store from "./Redux/redux-store";
 
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
 
-let rerenderMainPage = (State) => {
+let rerenderMainPage = () => {
   // debugger;
   ReactDOM.render(
     <React.StrictMode>
-      <App State={State} Store={Store} />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>,
     document.getElementById("root")
   );
 };
 
-rerenderMainPage(Store.getState());
+// rerenderMainPage(Store.getState());
 
-Store.subscribe(() => {
-  let state = Store.getState();
-  rerenderMainPage(state);
+// Store.subscribe(() => {
+//   let state = Store.getState();
+//   rerenderMainPage(state);
+// });
+
+rerenderMainPage();
+
+store.subscribe(() => {
+  rerenderMainPage();
 });
 
 reportWebVitals();

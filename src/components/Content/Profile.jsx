@@ -3,7 +3,7 @@ import UserInfo from "./UserInfo/UserInfo";
 import classes from "./Profile.module.css";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <div className={classes.block}>
       <img
@@ -11,7 +11,7 @@ const Profile = (props) => {
         src="https://static8.depositphotos.com/1370441/848/i/600/depositphotos_8486144-stock-photo-beach-and-tropical-sea.jpg"
       />
       <UserInfo />
-      <MyPostsContainer Store={props.Store} />
+      <MyPostsContainer />
     </div>
   );
 };
