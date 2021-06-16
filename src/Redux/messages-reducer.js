@@ -26,24 +26,30 @@ let initialState = {
 };
 
 const messagesReducer = (state = initialState, action) => {
+  //создаем копию state и будем работать только с копией
+  let stateCopy = { ...state }; //...спрайд - развертывание обхекта
   switch (action.type) {
-    case ADD_MESSAGE:
+    case ADD_MESSAGE: {
       let newMess = {
         id: state.messagesData.length + 1,
         message: state.textMessage,
       };
-      state.messagesData.push(newMess);
-      state.textMessage = "";
+      //копирование второго уровня влоденности в объект
+      stateCopy.messagesData = [...state.messagesData];
+      stateCopy.messagesData.push(newMess);
+      stateCopy.textMessage = "";
       break;
+    }
     //изменение текста в поле ввода сообщения
-    case CHANGE_MESSAGE_TEXT:
-      state.textMessage = action.messageText;
+    case CHANGE_MESSAGE_TEXT: {
+      stateCopy.textMessage = action.messageText;
       break;
+    }
 
     default:
       break;
   }
-  return state;
+  return stateCopy;
 };
 
 export const addMessageActionCreator = () => {

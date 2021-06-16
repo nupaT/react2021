@@ -7,17 +7,15 @@ import store from "./Redux/redux-store";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 
-let rerenderMainPage = () => {
-  // debugger;
-  ReactDOM.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </React.StrictMode>,
-    document.getElementById("root")
-  );
-};
+// debugger;
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
 // rerenderMainPage(Store.getState());
 
@@ -26,10 +24,10 @@ let rerenderMainPage = () => {
 //   rerenderMainPage(state);
 // });
 
-rerenderMainPage();
-
-store.subscribe(() => {
-  rerenderMainPage();
-});
+// убрали перерисовку всего документа, т.к. connect сам
+//перерисовывает только тот элемент который изменился
+// store.subscribe(() => {
+//   rerenderMainPage();
+// });
 
 reportWebVitals();
