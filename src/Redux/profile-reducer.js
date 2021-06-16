@@ -15,28 +15,33 @@ let initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
-  let stateCopy = { ...state };
   switch (action.type) {
     //добавление поста
-    case ADD_POST:
+    case ADD_POST: {
       let newPost = {
         id: state.postsData.length + 1,
         message: state.textPost,
         likesCount: 0,
       };
-      stateCopy.postsData = [...state.postsData];
-      stateCopy.postsData.push(newPost);
-      stateCopy.textPost = ""; //обнуление поля ввода после отправки
-      break;
+      //возвращаем изменяемые значения на страничке
+      return {
+        ...state,
+        //вместо push можно довавить в конец массива с помощью spread новое значение
+        postsData: [...state.postsData, newPost],
+        textPost: "",
+      };
+    }
     //изменение текста в поле ввода поста
-    case CHANGE_POST_TEXT:
-      stateCopy.textPost = action.postText;
-      break;
+    case CHANGE_POST_TEXT: {
+      return {
+        ...state,
+        textPost: action.postText,
+      };
+    }
 
     default:
-      break;
+      return state;
   }
-  return stateCopy;
 };
 
 export const addPostActionCreator = () => {

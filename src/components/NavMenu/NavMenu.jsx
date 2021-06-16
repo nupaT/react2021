@@ -1,10 +1,12 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
-import classes from "./NavMenu.module.css"
-import Friends from "./Friends/Friends"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import classes from "./NavMenu.module.css";
+import Friends from "./Friends/Friends";
 
 const NavMenu = (props) => {
-  let FriendsElement = props.usersData.map((userName) => <Friends name={userName.name} id={userName.id} />)
+  let FriendsElement = props.usersData.map((userName) => (
+    <Friends name={userName.name} id={userName.id} key={userName.id} />
+  ));
 
   return (
     <div className={classes.block}>
@@ -42,7 +44,7 @@ const NavMenu = (props) => {
         <div className={classes.friends__element}>{FriendsElement}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavMenu
+export default NavMenu;

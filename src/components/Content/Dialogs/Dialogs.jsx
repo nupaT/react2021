@@ -6,9 +6,13 @@ import Users from "./Users/Users";
 const Dialogs = (props) => {
   //создаем переменную usersElements и пробегаем по объекту usersData
   //забирая в нее user.name и user.id с помощью метода map
-  let usersElements = props.usersData.map((user) => <Users name={user.name} id={user.id} />);
+  let usersElements = props.usersData.map((user) => (
+    <Users name={user.name} id={user.id} key={user.id} />
+  ));
 
-  let messagesElements = props.messagesData.map((mess) => <Message message={mess.message} />);
+  let messagesElements = props.messagesData.map((mess) => (
+    <Message message={mess.message} key={mess.id} />
+  ));
 
   //создаем переменную newEnterTextMessage, которая вызывается по методу onChange в textarea
   //с помощью стрелочной функции со параметром event получаем значение из выбранного поля target.value

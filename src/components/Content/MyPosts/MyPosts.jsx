@@ -5,7 +5,7 @@ import classes from "./MyPosts.module.css";
 const MyPosts = (props) => {
   // debugger;
   let postsElements = props.postsData.map((post) => (
-    <MyPost message={post.message} likesCount={post.likesCount} />
+    <MyPost message={post.message} likesCount={post.likesCount} key={post.id} />
   ));
 
   let onAddPost = () => {
