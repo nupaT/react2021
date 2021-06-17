@@ -39,6 +39,11 @@ const NavMenu = (props) => {
           </li>
         </ul>
       </div>
+      <div className={classes.users}>
+        <NavLink className={classes.link} to="/Users" activeClassName={classes.active}>
+          Users search
+        </NavLink>
+      </div>
       <div className={classes.block__friends}>
         <div className={classes.friends__title}>Friends</div>
         <div className={classes.friends__element}>{FriendsElement}</div>

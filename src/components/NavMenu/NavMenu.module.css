@@ -27,6 +27,15 @@
   color: #0909f5;
 }
 
+.users {
+  margin: 20px 0 0 20px;
+  color: #444455;
+}
+
+.users:hover {
+  color: #0909f5;
+}
+
 .friends {
   margin: 50px 0 0 0;
 }

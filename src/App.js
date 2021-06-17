@@ -11,6 +11,7 @@ import DialogsContainer from "./components/Content/Dialogs/DialogsContainer";
 import News from "./components/Content/News/News";
 import Music from "./components/Content/Music/Music";
 import Settings from "./components/Content/Settings/Settings";
+import UsersContainer from "./components/Content/UsersData/UsersContainer";
 
 const App = () => {
   // debugger;
@@ -22,6 +23,7 @@ const App = () => {
           <NavMenuContainer />
           <Route path="/Profile" render={() => <Profile />} />
           <Route path="/Dialogs" render={() => <DialogsContainer />} />
+          <Route path="/Users" render={() => <UsersContainer />} />
           <Route path="/News" component={News} />
           <Route path="/Music" component={Music} />
           <Route path="/Settings" component={Settings} />
