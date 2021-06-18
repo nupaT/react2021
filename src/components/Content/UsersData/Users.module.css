@@ -1,0 +1,38 @@
+.body {
+  margin: 30px;
+  width: 100%;
+}
+
+.users__card {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 0 20px 0;
+}
+
+.users__ava {
+  margin: 0 20px 0 0;
+}
+
+.ava {
+}
+
+.ava img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.users_subscribe button {
+  width: 60px;
+  height: 20px;
+  background: #33aa33;
+}
+
+.users__desc {
+  display: flex;
+  flex: 10 1 auto;
+  justify-content: space-between;
+  margin: 0px 0px 10px 0px;
+  padding: 10px;
+  border: 2px solid #000000;
+}

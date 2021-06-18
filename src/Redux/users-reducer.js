@@ -6,6 +6,8 @@ let initialState = {
   usersData: [
     {
       id: 1,
+      userAva:
+        "https://cdn25.img.ria.ru/images/156087/28/1560872802_0:778:1536:1642_600x0_80_0_0_606c2d47b6d37951adc9eaf750de22f0.jpg",
       userName: "Evgeni",
       userStatus: "I'm best!",
       userLocation: { userCountry: "Belarus", userCity: "Vitebsk" },
@@ -13,6 +15,8 @@ let initialState = {
     },
     {
       id: 2,
+      userAva:
+        "https://cdn25.img.ria.ru/images/156087/28/1560872802_0:778:1536:1642_600x0_80_0_0_606c2d47b6d37951adc9eaf750de22f0.jpg",
       userName: "Dmitry",
       userStatus: "I'm best of the best!",
       userLocation: { userCountry: "Russia", userCity: "Moskow" },
@@ -20,6 +24,8 @@ let initialState = {
     },
     {
       id: 3,
+      userAva:
+        "https://cdn25.img.ria.ru/images/156087/28/1560872802_0:778:1536:1642_600x0_80_0_0_606c2d47b6d37951adc9eaf750de22f0.jpg",
       userName: "Irina",
       userStatus: "I'm fine!",
       userLocation: { userCountry: "Ukrain", userCity: "Kiiv" },
@@ -27,6 +33,8 @@ let initialState = {
     },
     {
       id: 4,
+      userAva:
+        "https://cdn25.img.ria.ru/images/156087/28/1560872802_0:778:1536:1642_600x0_80_0_0_606c2d47b6d37951adc9eaf750de22f0.jpg",
       userName: "Olga",
       userStatus: "I'm woman-cat!",
       userLocation: { userCountry: "USA", userCity: "New York" },
