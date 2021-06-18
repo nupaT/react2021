@@ -1,4 +1,5 @@
 const SUBSCRIBE = "SUBSCRIBE";
+const UN_SUBSCRIBE = "UN-SUBSCRIBE";
 const SET_USERS = "SET-USERS";
 //создаем начальное значение state и применяем его как дефолтное state - initialState
 
@@ -57,6 +58,18 @@ const UserReducer = (state = initialState, action) => {
         }),
       };
       break;
+
+    case UN_SUBSCRIBE:
+      return {
+        ...state,
+        usersData: state.usersData.map((user) => {
+          if (user.id === action.id) {
+            return { ...user, subscribe: false };
+          }
+          return user;
+        }),
+      };
+      break;
     //получение новых юзеров с сервера и их в конец существующих
     case SET_USERS:
       return {
@@ -71,6 +84,10 @@ const UserReducer = (state = initialState, action) => {
 
 export const subscribeAC = (id) => {
   return { type: SUBSCRIBE, id };
+};
+
+export const unSubscribeAC = (id) => {
+  return { type: UN_SUBSCRIBE, id };
 };
 
 export const setUsersAC = (usersData) => {
