@@ -4,7 +4,9 @@ const SET_USERS = "SET-USERS";
 //создаем начальное значение state и применяем его как дефолтное state - initialState
 
 let initialState = {
-  usersData: [
+  usersData: [],
+};
+/*
     {
       id: 1,
       userAva:
@@ -43,7 +45,7 @@ let initialState = {
     },
   ],
 };
-
+*/
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     //подписываемся или отписываемся от юзера
@@ -52,7 +54,7 @@ const UserReducer = (state = initialState, action) => {
         ...state,
         usersData: state.usersData.map((user) => {
           if (user.id === action.id) {
-            return { ...user, subscribe: true };
+            return { ...user, followed: true };
           }
           return user;
         }),
@@ -64,7 +66,7 @@ const UserReducer = (state = initialState, action) => {
         ...state,
         usersData: state.usersData.map((user) => {
           if (user.id === action.id) {
-            return { ...user, subscribe: false };
+            return { ...user, followed: false };
           }
           return user;
         }),
