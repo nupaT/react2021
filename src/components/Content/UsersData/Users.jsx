@@ -4,9 +4,11 @@ import classes from "./Users.module.css";
 import userDefaultAva from "../../../image/default_ava.jpg";
 
 const Users = (props) => {
-  debugger;
+  // debugger;
   //вызывается setUsers 2 раза!!!! еще не разобрался почему
   //23.06.21 всеравно попадает 2 раза!!
+  //Решено: убираем React.StrictMode из index.js - по умолчанию рендерит повторно компонент
+  //отсюда двойная отрисовка списка юзверей - Оставлю пока тут 
 
   if (props.user.length === 0) {
     console.log("true");
@@ -22,7 +24,7 @@ const Users = (props) => {
           <div className={classes.users__ava}>
             <div className={classes.ava}>
               <img
-                src={user.photos.smoll != null ? user.photos.smoll : userDefaultAva}
+                src={user.photos.small != null ? user.photos.small : userDefaultAva}
                 alt="picture"
               />
             </div>

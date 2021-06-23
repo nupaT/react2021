@@ -20,7 +20,6 @@ const UserReducer = (state = initialState, action) => {
           return user;
         }),
       };
-      break;
 
     case UN_SUBSCRIBE:
       return {
@@ -32,14 +31,12 @@ const UserReducer = (state = initialState, action) => {
           return user;
         }),
       };
-      break;
     //получение новых юзеров с сервера и их в конец существующих
     case SET_USERS:
       return {
         ...state,
         users: [...state.users, ...action.users],
       };
-      break;
 
     default:
       return state;
