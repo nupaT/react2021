@@ -4,7 +4,7 @@ import Users from "./Users";
 
 let mapStateToProps = (state) => {
   return {
-    user: state.usersPage.usersData,
+    user: state.usersPage.users,
   };
 };
 
@@ -18,8 +18,8 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(unSubscribeAC(userId));
     },
 
-    setUsers: (usersData) => {
-      dispatch(setUsersAC(usersData));
+    setUsers: (users) => {
+      dispatch(setUsersAC(users));
     },
   };
 };
