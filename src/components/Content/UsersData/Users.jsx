@@ -8,17 +8,19 @@ const Users = (props) => {
   //вызывается setUsers 2 раза!!!! еще не разобрался почему
   //23.06.21 всеравно попадает 2 раза!!
   //Решено: убираем React.StrictMode из index.js - по умолчанию рендерит повторно компонент
-  //отсюда двойная отрисовка списка юзверей - Оставлю пока тут 
-
-  if (props.user.length === 0) {
-    console.log("true");
-    axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
-      props.setUsers(response.data.items);
-    });
-  }
+  //отсюда двойная отрисовка списка юзверей - Оставлю пока тут
+  let getUsers = () => {
+    if (props.user.length === 0) {
+      console.log("true");
+      axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
+        props.setUsers(response.data.items);
+      });
+    }
+  };
 
   return (
     <div className={classes.body}>
+      <button onClick={getUsers}>Get Users</button>
       {props.user.map((user) => (
         <div key={user.id} className={classes.users__card}>
           <div className={classes.users__ava}>
