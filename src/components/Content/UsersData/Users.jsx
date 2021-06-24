@@ -9,12 +9,11 @@ import userDefaultAva from "../../../image/default_ava.jpg";
 //теперь чтобы отратиться к props нужно добавлять this т.к.
 //пропсы теперь являются частью класса
 //2-nd добавил constructor и кинул туда вызов запроса списка юзеров
+//!!!! компонента не умирает при переходе на другую страницу
+//!!!! надо разобраться
 
 class Users extends React.Component {
-  constructor(props) {
-    super(props);
-
-    console.log("true");
+  componentDidMount() {
     axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
       this.props.setUsers(response.data.items);
     });
