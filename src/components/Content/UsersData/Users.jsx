@@ -8,21 +8,23 @@ import userDefaultAva from "../../../image/default_ava.jpg";
 //и обязательный метод render для отрисовки jsx
 //теперь чтобы отратиться к props нужно добавлять this т.к.
 //пропсы теперь являются частью класса
+//2-nd добавил constructor и кинул туда вызов запроса списка юзеров
 
 class Users extends React.Component {
-  getUsers = () => {
-    if (this.props.user.length === 0) {
-      console.log("true");
-      axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
-        this.props.setUsers(response.data.items);
-      });
-    }
-  };
+  constructor(props) {
+    super(props);
+
+    console.log("true");
+    axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
+      this.props.setUsers(response.data.items);
+    });
+  }
 
   render() {
     return (
       <div className={classes.body}>
-        <button onClick={this.getUsers}>Get Users</button>
+        {/* отключил вызов списка юзеров по кнопке */}
+        {/* <button onClick={this.getUsers}>Get Users</button> */}
         {this.props.user.map((user) => (
           <div key={user.id} className={classes.users__card}>
             <div className={classes.users__ava}>
@@ -59,6 +61,7 @@ class Users extends React.Component {
                 <div>{user.name}</div>
                 <div>{user.status}</div>
               </div>
+              {/* пока не приходят эти данные */}
               {/* <div className={classes.users__location}>
                   <div>{user.userLocation.userCountry}</div>
                   <div>{user.userLocation.userCity}</div>
