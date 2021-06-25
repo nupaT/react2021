@@ -19,6 +19,10 @@ class Users extends React.Component {
     });
   }
 
+  // componentWillUnmount() {
+  //   alert("Componet killed");
+  // }
+
   render() {
     return (
       <div className={classes.body}>
