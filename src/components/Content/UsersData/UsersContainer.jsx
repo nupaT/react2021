@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setUsersAC, subscribeAC, unSubscribeAC } from "../../../Redux/users-reducer";
+import { setUsersAC, changeSubscribeAC /*, unSubscribeAC*/ } from "../../../Redux/users-reducer";
 import Users from "./Users";
 
 let mapStateToProps = (state) => {
@@ -10,13 +10,13 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    subscribeUser: (userId) => {
-      dispatch(subscribeAC(userId));
+    changeSubscribeUser: (userId) => {
+      dispatch(changeSubscribeAC(userId));
     },
 
-    unSubscribeUser: (userId) => {
-      dispatch(unSubscribeAC(userId));
-    },
+    // unSubscribeUser: (userId) => {
+    //   dispatch(unSubscribeAC(userId));
+    // },
 
     setUsers: (users) => {
       dispatch(setUsersAC(users));

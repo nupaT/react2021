@@ -34,7 +34,7 @@ class Users extends React.Component {
                 />
               </div>
               <div className={classes.users_subscribe}>
-                {user.followed ? (
+                {/* {user.followed ? (
                   <button
                     className={classes.subscribed}
                     onClick={() => {
@@ -52,7 +52,16 @@ class Users extends React.Component {
                   >
                     Подписаться
                   </button>
-                )}
+                )} */}
+                {/* сменил функцию subscribe - теперь вместо 2х функция одна */}
+                <button
+                  className={`${user.followed ? classes.subscribed : classes.unsubscribed}`}
+                  onClick={() => {
+                    this.props.changeSubscribeUser(user.id);
+                  }}
+                >
+                  {user.followed ? "Подписаться" : "Отписаться"}
+                </button>
               </div>
             </div>
             <div className={classes.users__desc}>
