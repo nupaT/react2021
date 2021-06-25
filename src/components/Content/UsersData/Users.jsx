@@ -14,18 +14,46 @@ import userDefaultAva from "../../../image/default_ava.jpg";
 
 class Users extends React.Component {
   componentDidMount() {
-    axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
-      this.props.setUsers(response.data.items);
-    });
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.currentPage}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
+  }
+  //компонента умирает, но state отсается заполненым
+  //при размонтировании компоненты в ручную сетаем стейт []
+  // также изменил фцнкцию set_state, теперь она не ДОписывает в конец
+  //а переписывает полностью state - пока так
+  componentWillUnmount() {
+    this.props.setUsers([]);
   }
 
-  // componentWillUnmount() {
-  //   alert("Componet killed");
-  // }
-
   render() {
+    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+      pages.push(i);
+    }
+
     return (
       <div className={classes.body}>
+        <div className={classes.pageUsers}>
+          {pages.map((page) => {
+            return (
+              <span
+                className={this.props.currentPage === page ? classes.pageUsers__active : ""}
+                onClick={() => {
+                  this.props.setCurrentPage(page);
+                }}
+              >
+                {page}
+              </span>
+            );
+          })}
+        </div>
         {/* отключил вызов списка юзеров по кнопке */}
         {/* <button onClick={this.getUsers}>Get Users</button> */}
         {this.props.user.map((user) => (
@@ -38,26 +66,6 @@ class Users extends React.Component {
                 />
               </div>
               <div className={classes.users_subscribe}>
-                {/* {user.followed ? (
-                  <button
-                    className={classes.subscribed}
-                    onClick={() => {
-                      this.props.unSubscribeUser(user.id);
-                    }}
-                  >
-                    Отписаться
-                  </button>
-                ) : (
-                  <button
-                    className={classes.unsubscribed}
-                    onClick={() => {
-                      this.props.subscribeUser(user.id);
-                    }}
-                  >
-                    Подписаться
-                  </button>
-                )} */}
-                {/* сменил функцию subscribe - теперь вместо 2х функция одна */}
                 <button
                   className={`${user.followed ? classes.subscribed : classes.unsubscribed}`}
                   onClick={() => {
