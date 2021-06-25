@@ -20,15 +20,27 @@ class Users extends React.Component {
       )
       .then((response) => {
         this.props.setUsers(response.data.items);
+        this.props.setTotalCountUsers(response.data.totalCount);
       });
   }
   //компонента умирает, но state отсается заполненым
   //при размонтировании компоненты в ручную сетаем стейт []
   // также изменил фцнкцию set_state, теперь она не ДОписывает в конец
   //а переписывает полностью state - пока так
-  componentWillUnmount() {
-    this.props.setUsers([]);
-  }
+  // componentWillUnmount() {
+  //   this.props.setUsers([]);
+  // }
+
+  onPageChange = (pageNum) => {
+    this.props.setCurrentPage(pageNum);
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${pageNum}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
+  };
 
   render() {
     let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
@@ -46,7 +58,7 @@ class Users extends React.Component {
               <span
                 className={this.props.currentPage === page ? classes.pageUsers__active : ""}
                 onClick={() => {
-                  this.props.setCurrentPage(page);
+                  this.onPageChange(page);
                 }}
               >
                 {page}

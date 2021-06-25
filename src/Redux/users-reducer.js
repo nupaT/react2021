@@ -1,12 +1,14 @@
 const CHANGE_SUBSCRIBE = "CHANGE-SUBSCRIBE";
 const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
+
 //создаем начальное значение state и применяем его как дефолтное state - initialState
 
 let initialState = {
   users: [],
-  pageSize: 5,
-  totalUsersCount: 16,
+  pageSize: 6,
+  totalUsersCount: 0,
   currentPage: 1,
 };
 
@@ -28,14 +30,19 @@ const UserReducer = (state = initialState, action) => {
     case SET_USERS:
       return {
         ...state,
-        //пока закоментил чтобы сетать не в конец а полностью перетирать state
-        users: [/*...state.users,*/ ...action.users],
+        users: action.users,
       };
 
     case SET_CURRENT_PAGE:
       return {
         ...state,
         currentPage: action.currentPage,
+      };
+
+    case SET_TOTAL_USERS_COUNT:
+      return {
+        ...state,
+        totalUsersCount: action.totalUsersCount,
       };
 
     default:
@@ -58,6 +65,13 @@ export const setCurrentPageAC = (currentPage) => {
   return {
     type: SET_CURRENT_PAGE,
     currentPage,
+  };
+};
+
+export const setTotalCountUsersAC = (totalUsersCount) => {
+  return {
+    type: SET_TOTAL_USERS_COUNT,
+    totalUsersCount,
   };
 };
 
